@@ -1,5 +1,5 @@
 {
-  "name": "time-slider",
+  "name": "video-time-slider",
   "version": "1.0.0",
   "main": "./dist/esm.js",
   "scripts": {

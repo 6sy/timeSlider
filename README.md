@@ -1,9 +1,9 @@
 ### Introduce:
-time-slider是一个基于原生js打造的视频回放时间轴组件，本组件适用于任何框架。
+video-time-slider是一个基于原生js打造的视频回放时间轴组件，本组件适用于任何框架。
 
 ### Install:
 ```
-npm install time-slider --save
+npm install video-time-slider --save
 ```
 ### Usage:
 ```
@@ -12,7 +12,7 @@ const timeSliderInstance = initTimeSlider(el,config)
 #### React Hook:
 ```tsx
 import {useEffect} from 'react';
-import initTimeSlider from 'time-slider';
+import initTimeSlider from 'video-time-slider';
 function App() {
   useEffect(()=>{
     initTimeSlider('#timeSlider',{
@@ -38,7 +38,7 @@ export default App;
 #### Vue3:
 ```vue
 <script setup lang="ts">
-import initTimeSlider from 'time-slider';
+import initTimeSlider from 'video-time-slider';
 import { nextTick } from 'vue';
 nextTick(()=>{
   initTimeSlider('#timeSlider',{
@@ -80,7 +80,7 @@ initTimeSlider('#timeSlider',{
 |:--|:--:|:--:|:--:|--:|
 |curDaytimeChunkArray|当天的时间块,每一项格式为`startTime-endTime-type`|Array|必填| --|
 |presentSeconds|开始播放时间,这个时间为秒数，而且必须在curDaytimeChunkArray时间段内|number| 必填| --|
-|timeChunkType|时间段类型,属性名为类型与curDaytimeChunkArray对应，属性值为渲染到时间轴上的颜色|object| | --|
+|timeChunkType|时间段类型,属性名为类型与curDaytimeChunkArray对应，属性值为渲染到时间轴上的颜色|object|必填 | --|
 |speed|时间线滚动的速率|number| --| 1|
 |isInitialPlay|是否初始化后进行播放,如果设置为false,可以调用实例的timeLinePlay进行播放|boolean| --| false|
 
