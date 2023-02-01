@@ -1,0 +1,294 @@
+.playback-container{
+  min-height: calc(100vh - 70px);
+  max-height: calc(100vh - 70px);
+  background-color: rgb(85, 85, 85);
+}
+.playback-container .date-select{
+  width:212px;
+  background-color: rgb(51, 51, 51);
+}
+.playback-container .ui-datepicker-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding:5px;
+  
+  color:white;
+}
+.playback-container table td {
+  width:28px;
+  height:28px;
+}
+.playback-container table td .item{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  background-color: rgb(0, 0, 0);
+  color:white;
+  font-size:12px;
+  text-align: center;
+  cursor: pointer;
+}
+.container-content{
+  display: flex;
+  height: calc(80vh - 49px) ;
+  min-height: 390px;
+  box-sizing: border-box;
+  padding:20px
+}
+.container-content .date-select{
+  width:260px;
+  background-color: rgb(34, 34, 34);
+  border-radius: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.ui-datepicker-body{
+  display: flex;
+  justify-content: center;
+}
+.playback-container .player-box{
+  width:100%;
+  background-color: rgb(34, 34, 34);
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.playback-container .playback-canvas{
+  height: 100%;
+}
+.playback-fullScreen-canvas{
+  width: 100% !important;
+  height:auto !important;
+}
+.playback-container .canvas-container{
+  height: calc(100% - 52px);
+  text-align: center;
+}
+
+.time-slider-container{
+  /* height: calc(20vh - 21px) ; */
+  min-height: 125px;
+  transition: 1.5s all;
+  position: fixed;
+  bottom: 0;
+}
+.ui-datepicker-body .date-selected{
+  background-color: rgb(3, 191, 22) !important;
+}
+.ui-datepicker-body .item{
+  position: relative;
+  border-radius: 2px;
+}
+.ui-datepicker-body .sign-date{
+  position: absolute;
+  right:0;
+}
+.ui-datepicker-body th {
+  color: #fff;
+  font-weight: normal;
+}
+.opacity-3{
+  opacity: 0.3;
+}
+.jump-month-btn{
+  cursor: pointer;
+}
+
+#timeSlider{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 1);
+  overflow: hidden;
+  user-select: none;
+}
+
+.ts-container {
+  position: relative;
+  display: flex;
+  pointer-events: none;
+
+}
+
+.ts-axis {
+  background-color: rgba(255, 255, 255, .1);
+  height: 20px;
+  pointer-events: none;
+  z-index: 99;
+  color: rgba(255, 255, 255, 0.596078431372549);
+  font-size: 14px;
+}
+
+.ts-axis-60 {
+  flex: 1;
+  border-right: 1px solid rgba(0, 0, 0, 1);
+  min-width: 48px;
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+.ts-timeChunk {
+  height: 20px;
+  /* display: none; */
+  position: absolute;
+  z-index: 99
+}
+
+.ts-axis-long {
+  height: 20px;
+}
+
+.ts-axis-short {
+  height: 10px;
+}
+
+.ts-axis-last {
+  border-right: none;
+}
+
+.ts-axis-time {
+  position: absolute;
+  top: -25px;
+  left: -20px;
+}
+
+.ts-axis-time-last {
+  position: absolute;
+  top: -120%;
+  left: 50%;
+}
+
+.ts-move {
+  cursor: move;
+}
+
+.ts-line {
+  height: 100px;
+  border-left: 1px solid rgba(255, 255, 0, 1);
+  box-sizing: border-box;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 20px;
+  z-index: 999;
+  pointer-events: none;
+  /* position: relative; */
+}
+
+.ts-line-present {
+  /* display: none; */
+  position: relative;
+  top:-20px;
+  left: -20px;
+}
+
+.time-slider-count{
+  display: flex;
+  background-color: rgb(24, 24, 24);
+  box-sizing: border-box;
+  padding:10px 20px;
+}
+.time-slider-count .item{
+  display: flex;
+  font-size: 14px;
+  color:rgb(155, 164, 164);
+  align-items: center;
+}
+.time-slider-count .item div{
+  width:14px;
+  height: 14px;
+  margin-right: 14px;
+}
+.time-slider-count .background-1{
+  background-color: rgb(0, 0, 255);
+}
+.time-slider-count .background-2{
+  background-color: rgb(0, 255, 0);
+}
+.time-slider-count .background-3{
+  background-color: rgb(255, 0, 0);
+}
+.time-slider-count .background-4{
+  background-color: rgb(0, 128, 128);
+}
+.time-slider-count .background-5{
+  background-color: rgb(128, 0, 0);
+}
+.time-slider-count .background-6{
+  background-color: rgb(255, 255, 0);
+}
+.time-slider-count .background-7{
+  background-color: rgb(128, 128, 0);
+}
+.time-slider-count .background-8{
+  background-color: rgb(240, 128, 128);
+}
+.time-slider-count .background-9{
+  background-color: rgb(255, 0, 255);
+}
+.item-cur-month .icon-up{
+  color: red;
+  display: inline-block;
+  top: -9px;
+  position: absolute;
+  transform: rotate(45deg);
+  font-size: 12px;
+  left: 15px;
+}
+.playback-container .bottom-setting{
+  height: 52px;
+  background-color: rgb(242, 242, 242);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding:10px;
+  justify-content: space-between;
+}
+.playback-container .bottom-setting .iconfont{
+  cursor: pointer;
+}
+.playback-container .bottom-setting .iconfont:hover{
+  color:rgb(0, 183, 46)
+}
+.playback-container .iconfont{
+  font-size:22px;
+}
+.playback-container .icon-up{
+  font-size:10px !important;
+  pointer-events:none;
+}
+.playback-fullScreen-box{
+  position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+    padding: 20px;
+}
+
+.playback-fullScreen-timeSlider-show{
+  position: fixed !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  z-index:100001 !important;
+  height:auto !important;
+  opacity: 0.8;
+}
+.bottom-setting div{
+  display: flex;
+  align-items: center;
+}
+.bottom-setting i{
+  margin-right: 10px;
+}

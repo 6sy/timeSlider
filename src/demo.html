@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../dist/main.js"></script>
+</head>
+
+<body>
+    <div id="timeSlider"></div>
+</body>
+<script>
+    let timeSliderInstance =  new initTimeSlider('#timeSlider',{
+  curDaytimeChunkArray:['012200-023000-C','002200-003000-B','001200-002000-A','000000-001000-A'],
+  presentSeconds:20,
+  timeChunkType:{
+    A:'red',
+    B:'yellow',
+    C:'blue'
+  },
+  speed:1,
+  isInitialPlay:true,
+ })
+</script>
+
+</html>
