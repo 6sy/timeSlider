@@ -3,6 +3,11 @@ video-time-slider是一个基于原生js打造的视频回放时间轴组件，�
 ![image text](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f928d0c8141c4f78b0b893f27f1d566e~tplv-k3u1fbpfcp-watermark.image?)
 ### demonstration
 打开demo.html就可以直接演示操作了。
+### 调试
+```
+npm i
+npm run dev
+```
 ### Install:
 ```
 npm install video-time-slider --save
@@ -85,7 +90,9 @@ initTimeSlider('#timeSlider',{
 |timeChunkType|时间段类型,属性名为类型与curDaytimeChunkArray对应，属性值为渲染到时间轴上的颜色|object|必填 | --|
 |speed|时间线滚动的速率|number| --| 1|
 |isInitialPlay|是否初始化后进行播放,如果设置为false,可以调用实例的timeLinePlay进行播放|boolean| --| false|
-
+|onClick|时间轴点击回调事件|functon||接受两个参数，第一个参数是点击前的时间，第二个参数是点击后的时间|
+|onMove|时间轴开始拖动回调事件|function|||
+|onMouseDown|时间轴mousedown回调事件|function|||
 ### Method(instance):
 
 #### timeLinePlay 
@@ -109,6 +116,11 @@ instance.setTimeLineLeft()   // 设置时间线的位置
 - 支持以时间线为中心进行缩放时间轴
 - 支持不同类型的时间段
 - 支持时间轴的点击和拖动
+
+### 版本 1.1.0
+- 新增鼠标滑动辅助时间线展示。
+- 支持点击，滑动，mousedown事件监听。
+- 修复点击事件后，时间轴左移问题。
 
 
 
