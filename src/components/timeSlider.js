@@ -61,7 +61,6 @@ class timeSlider extends CommonUtils {
     this.onMouseDownCallback = config.onMouseDown // 外部监听mousedown事件
     this.initAxis()
     this.initTimeChunk()
-    this.initTimeChunkSelector()
 
     // 模拟播放条件
     if (config.presentSeconds && this.curDaytimeChunkArray.length) {
