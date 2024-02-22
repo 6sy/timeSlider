@@ -2,7 +2,8 @@
 video-time-slider是一个基于原生js打造的视频回放时间轴组件，本组件适用于任何框架。
 ![image text](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f928d0c8141c4f78b0b893f27f1d566e~tplv-k3u1fbpfcp-watermark.image?)
 ### demonstration
-打开demo.html就可以直接演示操作了。
+在线演示地址：[https://6sy.github.io/](https://6sy.github.io/)
+挂载在github上，可能有时候访问慢。
 ### 调试
 ```
 npm i
