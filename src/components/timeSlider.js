@@ -326,8 +326,8 @@ class timeSlider extends CommonUtils {
  */
   calTimeSlider() {
     let axisDom = this.getDomInstanceUtils('.ts-axis')
-    this.axisLength = axisDom.offsetWidth
-    this.allAxisLength = axisDom.offsetWidth * this.precisionSetting[this.wheelIndexMap[this.wheelIndex]]
+    this.axisLength = axisDom.getBoundingClientRect().width.toFixed(2)
+    this.allAxisLength = axisDom.getBoundingClientRect().width.toFixed(2) * this.precisionSetting[this.wheelIndexMap[this.wheelIndex]]
     console.log('总长度', this.allAxisLength)
     console.log('单个长度', this.axisLength)
   }
