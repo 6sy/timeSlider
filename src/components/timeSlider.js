@@ -68,8 +68,9 @@ class timeSlider extends CommonUtils {
       for (let i = 0; i < this.curDaytimeChunkArray.length; i++) {
         // 解析时间块的时间
         let timeData = this.curDaytimeChunkArray[i].split('-');
-        let startTime = timeData[0];
-        let endTime = timeData[1];
+        // fix: 初始化秒数如果是5400，指针不走:为00::00:00
+        let startTime = this.timeTranslateSecondsUtils(timeData[0]);
+        let endTime = this.timeTranslateSecondsUtils(timeData[1]);
         if (this.presentSeconds >= startTime && this.presentSeconds <= endTime) {
           this.curPlayTimeChunk = [startTime, endTime, i];
           this.isInitialPlay && this.timeLinePlay();
