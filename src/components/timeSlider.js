@@ -152,7 +152,7 @@ class timeSlider extends CommonUtils {
        }catch(e){
        }
       }
-      if (that.isMouseDown && this.precision !== 3600) {
+      if (that.isMouseDown) {
         let offsetX = e.offsetX - this.startX;
         let isDragToLeft = offsetX < 0
         let isDragToRight = offsetX > 0
@@ -178,11 +178,10 @@ class timeSlider extends CommonUtils {
       let oldPresentSeconds = this.presentSeconds
       // 处理点击事件
       if (new Date().getTime() - that.startMouseDownTime < 300) {
-        console.log('点击', e.offsetX)
         this.handleClick(e.offsetX)
       } else {
         // 计算当前时间
-        this.calCurPreseconds(e.offsetX - this.startX - this.PADDINGLEFT)
+        // this.calCurPreseconds(e.offsetX - this.startX - this.PADDINGLEFT)
       }
       that.isMouseDown = false;
       this.rootDom.classList.remove('ts-move')
@@ -328,8 +327,6 @@ class timeSlider extends CommonUtils {
     let axisDom = this.getDomInstanceUtils('.ts-axis')
     this.axisLength = axisDom.getBoundingClientRect().width.toFixed(2)
     this.allAxisLength = axisDom.getBoundingClientRect().width.toFixed(2) * this.precisionSetting[this.wheelIndexMap[this.wheelIndex]]
-    console.log('总长度', this.allAxisLength)
-    console.log('单个长度', this.axisLength)
   }
   /**
   * 时间轴dom的展示
@@ -404,7 +401,6 @@ class timeSlider extends CommonUtils {
         let min = (((time / 60) % 60))
 
         let hour = Math.floor((time / 60 / 60)).toFixed(2) * 100 / 100
-        console.log(time, hour)
         span.innerText = `${hour >= 10 ? hour : '0' + hour}:${min >= 10 ? min : '0' + min}`
         div.appendChild(span);
       }
@@ -456,7 +452,6 @@ class timeSlider extends CommonUtils {
       this.setTimeLineLeft()
 
       if (this.containerDom.offsetWidth < left) {
-        console.log('playback isRightOver')
         this.isRightOver = true;
       } else {
         this.isRightOver = false;
@@ -466,7 +461,6 @@ class timeSlider extends CommonUtils {
       // 当段录像播放完毕  兼容处理'174252-174656-A', '173952-174253-A'
       // +2为了临界值的判断
       if (this.presentSeconds + 1 >= this.curPlayTimeChunk[1]) {
-        console.log('临界判断')
         let index = this.curPlayTimeChunk[2] - 1;
         if (index < 0) {
           this.presentSeconds = this.presentSeconds + this.speed
@@ -515,7 +509,6 @@ class timeSlider extends CommonUtils {
     let seconds = (-this.domLeftToNumberUtils(this.containerDom) + left - this.PADDINGLEFT) * this.DAYSECONDS / this.allAxisLength
     let timeNow = this.secondsTranslateTimeUtils(seconds);
      // 开启辅助时间线
-     console.log(seconds,seconds)
      if(seconds>=0 && seconds<=60*60*24){
       this.assistTimeLineDom.style.display = 'block'
       this.assistTimeLinePresentDom.style.display = 'block'
@@ -526,7 +519,7 @@ class timeSlider extends CommonUtils {
     this.assistTimeLinePresentDom.innerText = timeNow
     let leftPx = (seconds) * (this.allAxisLength / this.DAYSECONDS)
     leftPx = (leftPx + this.domLeftToNumberUtils(this.containerDom))
-    this.assistTimeLineDom.style.left = this.PADDINGLEFT + leftPx + 'px'
+    this.assistTimeLineDom.style.left = this.PADDINGLEFT + leftPx + 'px' 
   }
 }
 
